@@ -1,1 +1,385 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
+    <meta name="description" content="Se dice de mí. Revista digital feminista, social y política.">
+
+    <title>Se dice de mí | Revista digital</title>
+
+    <style>
+        :root {
+            --crema: #f4eee3;
+            --negro: #191616;
+            --bordo: #801b39;
+            --violeta: #4d285d;
+            --verde: #b4c45b;
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            background: var(--crema);
+            color: var(--negro);
+            font-family: Arial, sans-serif;
+            line-height: 1.6;
+        }
+
+        header {
+            padding: 25px 6%;
+            text-align: center;
+            border-bottom: 2px solid var(--negro);
+        }
+
+        .identidad {
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        .logo {
+            margin: 12px 0 0;
+            font-family: Georgia, serif;
+            font-size: clamp(38px, 9vw, 75px);
+            font-weight: 900;
+            letter-spacing: -3px;
+            line-height: 1.1;
+        }
+
+        .logo span {
+            color: var(--bordo);
+        }
+
+        .lema {
+            margin: 12px 0 20px;
+            font-size: 13px;
+            font-style: italic;
+        }
+
+        nav {
+            display: flex;
+            justify-content: center;
+            flex-wrap: wrap;
+            gap: 12px 20px;
+        }
+
+        nav a {
+            color: var(--negro);
+            font-size: 11px;
+            font-weight: bold;
+            text-decoration: none;
+            text-transform: uppercase;
+        }
+
+        nav a:hover {
+            color: var(--bordo);
+        }
+
+        .portada {
+            display: grid;
+            grid-template-columns: 1fr 1fr;
+            gap: 30px;
+            align-items: center;
+            padding: 65px 8%;
+        }
+
+        .categoria {
+            color: var(--bordo);
+            font-size: 11px;
+            font-weight: bold;
+            letter-spacing: 2px;
+        }
+
+        h1 {
+            margin: 18px 0;
+            font-family: Georgia, serif;
+            font-size: clamp(36px, 5vw, 65px);
+            line-height: 1.08;
+            letter-spacing: -2px;
+        }
+
+        .descripcion {
+            margin-bottom: 25px;
+            font-size: 15px;
+        }
+
+        .boton {
+            display: inline-block;
+            padding: 12px 18px;
+            background: var(--bordo);
+            color: white;
+            font-size: 12px;
+            font-weight: bold;
+            text-decoration: none;
+        }
+
+        .collage {
+            display: flex;
+            min-height: 300px;
+            flex-direction: column;
+            justify-content: center;
+            align-items: center;
+            padding: 20px;
+            background: var(--violeta);
+            color: var(--crema);
+            transform: rotate(2deg);
+        }
+
+        .collage p {
+            font-family: Georgia, serif;
+            font-size: clamp(35px, 6vw, 70px);
+            font-weight: 900;
+            line-height: 1.15;
+        }
+
+        .collage .destacado {
+            padding: 0 10px;
+            background: var(--verde);
+            color: var(--negro);
+            transform: rotate(-5deg);
+        }
+
+        .collage .nota {
+            margin-top: 25px;
+            font-family: Arial, sans-serif;
+            font-size: 10px;
+            letter-spacing: 2px;
+            text-align: center;
+        }
+
+        .publicaciones {
+            padding: 55px 8%;
+            background: #fffdf8;
+        }
+
+        h2 {
+            margin: 8px 0 28px;
+            font-family: Georgia, serif;
+            font-size: clamp(30px, 5vw, 45px);
+            line-height: 1.15;
+        }
+
+        .articulos {
+            display: grid;
+            grid-template-columns: repeat(3, minmax(0, 1fr));
+            gap: 20px;
+        }
+
+        .articulo {
+            padding: 22px;
+            border: 1px solid #d9d0c4;
+            background: var(--crema);
+        }
+
+        .articulo h3 {
+            margin: 12px 0;
+            font-family: Georgia, serif;
+            font-size: 23px;
+            line-height: 1.2;
+        }
+
+        .articulo p {
+            font-size: 14px;
+        }
+
+        .etiqueta {
+            color: var(--bordo);
+            font-size: 10px;
+            font-weight: bold;
+            letter-spacing: 1px;
+        }
+
+        .investigacion {
+            padding: 60px 9%;
+            background: var(--bordo);
+            color: white;
+        }
+
+        .investigacion .categoria {
+            color: var(--verde);
+        }
+
+        .investigacion h2 {
+            max-width: 700px;
+        }
+
+        .investigacion p:last-child {
+            max-width: 600px;
+        }
+
+        footer {
+            padding: 35px 7%;
+            text-align: center;
+        }
+
+        footer .logo {
+            font-size: 32px;
+        }
+
+        footer p {
+            margin-top: 12px;
+            font-size: 12px;
+        }
+
+        @media (max-width: 700px) {
+            .portada {
+                grid-template-columns: 1fr;
+                padding: 40px 7%;
+                gap: 35px;
+            }
+
+            h1 {
+                font-size: 43px;
+            }
+
+            .collage {
+                min-height: 260px;
+            }
+
+            .articulos {
+                grid-template-columns: 1fr;
+            }
+
+            .publicaciones {
+                padding: 40px 7%;
+            }
+
+            .investigacion {
+                padding: 45px 7%;
+            }
+        }
+    </style>
+</head>
+
+<body>
+
+    <header>
+        <p class="identidad">
+            REVISTA INDEPENDIENTE · FEMINISTA · SOCIAL
+        </p>
+
+        <div class="logo">
+            SE DICE <span>DE MÍ.</span>
+        </div>
+
+        <p class="lema">
+            Cuestionar. Investigar. Contar.
+        </p>
+
+        <nav>
+            <a href="#inicio">Inicio</a>
+            <a href="#feminismos">Feminismos</a>
+            <a href="#politica">Política</a>
+            <a href="#sociedad">Sociedad</a>
+            <a href="#investigaciones">Investigaciones</a>
+        </nav>
+    </header>
+
+    <main>
+
+        <section class="portada" id="inicio">
+
+            <div>
+                <p class="categoria">NACE UNA NUEVA VOZ</p>
+
+                <h1>Lo que incomoda también merece ser contado.</h1>
+
+                <p class="descripcion">
+                    Una revista para cuestionar lo establecido,
+                    explorar las desigualdades y abrir conversaciones
+                    sobre la sociedad en la que vivimos.
+                </p>
+
+                <a class="boton" href="#publicaciones">
+                    EXPLORAR LA REVISTA →
+                </a>
+            </div>
+
+            <div class="collage">
+                <p>NUESTRAS</p>
+                <p class="destacado">VOCES</p>
+                <p class="nota">
+                    HISTORIAS · DERECHOS · DEBATES
+                </p>
+            </div>
+
+        </section>
+
+        <section class="publicaciones" id="publicaciones">
+
+            <p class="categoria">PARA EMPEZAR A LEER</p>
+
+            <h2>Ideas que merecen espacio.</h2>
+
+            <div class="articulos">
+
+                <article class="articulo" id="feminismos">
+                    <p class="etiqueta">FEMINISMOS</p>
+                    <h3>¿Por qué seguimos hablando de feminismo?</h3>
+                    <p>
+                        Una mirada a las luchas, los debates y
+                        los desafíos del movimiento feminista.
+                    </p>
+                </article>
+
+                <article class="articulo" id="politica">
+                    <p class="etiqueta">POLÍTICA</p>
+                    <h3>La participación juvenil importa</h3>
+                    <p>
+                        Juventudes, democracia y construcción
+                        colectiva de una sociedad más participativa.
+                    </p>
+                </article>
+
+                <article class="articulo" id="sociedad">
+                    <p class="etiqueta">SOCIEDAD</p>
+                    <h3>Las palabras también construyen realidades</h3>
+                    <p>
+                        Una reflexión sobre los prejuicios,
+                        la discriminación y sus consecuencias.
+                    </p>
+                </article>
+
+            </div>
+
+        </section>
+
+        <section class="investigacion" id="investigaciones">
+
+            <p class="categoria">MÁS ALLÁ DEL TITULAR</p>
+
+            <h2>Investigar también es una forma de intervenir.</h2>
+
+            <p>
+                Informes, entrevistas, documentos y análisis
+                para comprender los problemas sociales con
+                profundidad y fuentes verificables.
+            </p>
+
+        </section>
+
+    </main>
+
+    <footer>
+        <div class="logo">SE DICE <span>DE MÍ.</span></div>
+
+        <p>
+            Una revista para mirar la realidad desde otra perspectiva.
+        </p>
+
+        <p>
+            © 2026 Se dice de mí · Revista digital independiente.
+        </p>
+    </footer>
+
+</body>
+</html>
